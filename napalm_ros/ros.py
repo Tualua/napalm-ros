@@ -52,10 +52,10 @@ class ROSDriver(NetworkDriver):
     # pylint: disable=super-init-not-called
     def __init__(self, hostname, username, password, timeout=60, optional_args=None):
         self.hostname = hostname
-        self.username = self.optional_args.get('ros_username', 'admin')
-        self.password = self.optional_args.get('ros_password', 'admin')
         self.timeout = timeout
         self.optional_args = optional_args or {}
+        self.username = self.optional_args.get('ros_username', 'admin')
+        self.password = self.optional_args.get('ros_password', 'admin')
         if self.optional_args.get('netbox_default_ssl_params', False):
             ctx = ssl.create_default_context()
             try:
